@@ -6,39 +6,40 @@ import SeriesTMDB from "../components/SeriesTMDB";
 import Favoritas from "../components/Favoritas";
 
 const Header: React.FC = () => (
-  <header className="text-center py-10 sm:py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md">
-    <h1 className="text-3xl sm:text-4xl font-bold mb-2">Pedro Castillo</h1>
-    <p className="text-base sm:text-lg opacity-90">
+  <header className="text-center py-8 sm:py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md">
+    <h1 className="text-2xl sm:text-4xl font-bold mb-2">Pedro Castillo</h1>
+    <p className="text-sm sm:text-lg opacity-90">
       Locución, diseño gráfico y programación
     </p>
-    <div className="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4 px-4">
+    <div className="mt-5 flex flex-wrap justify-center gap-2 sm:gap-4 px-3">
       <a
         href="#sobre-mi"
-        className="bg-white/20 hover:bg-white/30 text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base transition"
+        className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-xs sm:text-base transition"
       >
         Sobre mí
       </a>
       <a
         href="#experiencia"
-        className="bg-white/20 hover:bg-white/30 text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base transition"
+        className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-xs sm:text-base transition"
       >
         Experiencia
       </a>
       <a
         href="#entretenimiento"
-        className="bg-white/20 hover:bg-white/30 text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base transition"
+        className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-xs sm:text-base transition"
       >
         Entretenimiento
       </a>
       <a
         href="#contacto"
-        className="bg-white/20 hover:bg-white/30 text-white px-3 sm:px-4 py-2 rounded-lg text-sm sm:text-base transition"
+        className="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg text-xs sm:text-base transition"
       >
         Contacto
       </a>
     </div>
   </header>
 );
+
 
 const SectionContainer: React.FC<{ id: string; children: React.ReactNode }> = ({
   id,
