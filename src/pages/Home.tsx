@@ -1,6 +1,9 @@
 import React from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
+import mifoto from "../assets/mifoto.jpg";
+import SeriesTMDB from "../components/SeriesTMDB";
+import Favoritas from "../components/Favoritas";
 
 const Header: React.FC = () => (
   <header className="text-center py-12 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md">
@@ -22,6 +25,12 @@ const Header: React.FC = () => (
         Experiencia
       </a>
       <a
+        href="#entretenimiento"
+        className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition"
+      >
+        Entretenimiento
+      </a>
+      <a
         href="#contacto"
         className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg transition"
       >
@@ -38,7 +47,7 @@ const SobreMi: React.FC = () => (
   >
     <h2 className="text-2xl font-semibold mb-4 text-indigo-700">Sobre mí</h2>
     <img
-      src="/mifoto.jpg"
+      src={mifoto}
       alt="Pedro Castillo"
       className="w-32 h-32 rounded-full mx-auto shadow-md mb-4 object-cover"
     />
@@ -68,6 +77,20 @@ const Experiencia: React.FC = () => (
     </ul>
   </section>
 );
+
+const Entretenimiento: React.FC = () => (
+  <section
+    id="entretenimiento"
+    className="max-w-3xl mx-auto mt-12 p-8 bg-white rounded-2xl shadow-lg text-center"
+  >
+    <h2 className="text-2xl font-semibold mb-6 text-indigo-700">
+      TV y series populares
+    </h2>
+    <SeriesTMDB />
+    <Favoritas /> 
+  </section>
+);
+
 
 const Contacto: React.FC = () => (
   <section
@@ -111,6 +134,7 @@ const App: React.FC = () => (
     <Header />
     <SobreMi />
     <Experiencia />
+    <Entretenimiento />
     <Contacto />
     <footer className="text-center py-6 text-gray-500 mt-12">
       © {new Date().getFullYear()} ozzie.com

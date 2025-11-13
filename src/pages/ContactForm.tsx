@@ -35,7 +35,7 @@ export default function EnviarMensaje() {
             className="absolute left-0 text-gray-600 hover:text-blue-600 transition-colors duration-200"
             title="Volver"
           >
-            ←
+            ← Volver
           </button>
           <h2 className="text-3xl font-bold text-gray-800 tracking-tight text-center w-full">
             📩 Enviar mensaje
