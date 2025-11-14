@@ -90,7 +90,7 @@ const Experiencia: React.FC = () => (
 const Entretenimiento: React.FC = () => (
   <SectionContainer id="entretenimiento">
     <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-indigo-700">
-      TV y series populares
+      Películas y series populares
     </h2>
     <div className="space-y-8">
       <SeriesTMDB />
