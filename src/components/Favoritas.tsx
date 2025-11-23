@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface Favorito {
   id: number;
@@ -43,33 +44,60 @@ const Favoritas: React.FC = () => {
     fetchFavoritas();
   }, []);
 
-  if (loading) return <p className="text-center mt-8">Cargando tus favoritas...</p>;
+  if (loading)
+    return <p className="text-center mt-8">Cargando tus favoritas...</p>;
 
   return (
     <div className="mt-8">
       <h3 className="text-xl font-semibold mb-4 text-indigo-700">
         Mis favoritas 🎞️
       </h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+      <motion.div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
+        }}
+      >
         {favoritas.map((item) => (
-          <div
+          <motion.div
             key={item.id}
-            className="relative rounded-lg overflow-hidden bg-gray-800 text-white shadow-lg group"
+            variants={{
+              hidden: { opacity: 0, scale: 0.8, y: 20 },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                transition: { duration: 0.4 },
+              },
+            }}
+            whileHover={{
+              scale: 1.06,
+              y: -6,
+              transition: { type: "spring", stiffness: 180 },
+            }}
+            className="relative rounded-lg overflow-hidden bg-gray-800 text-white shadow-lg group cursor-pointer"
           >
             <img
               src={item.imagen}
               alt={item.titulo}
-              className="w-full h-80 object-cover bg-black transition-opacity duration-300 group-hover:opacity-60"
+              className="w-full h-80 object-cover transition-opacity duration-300 group-hover:opacity-60"
             />
+
             <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
               <h3 className="text-white text-lg font-semibold bg-black/60 px-4 py-2 rounded-lg">
                 {item.titulo}
               </h3>
               <p className="text-sm text-gray-200">{item.tipo}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

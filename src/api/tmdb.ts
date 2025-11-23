@@ -16,6 +16,11 @@ export const getPopularSeries = async () => {
   return response.data.results;
 };
 
+/*export const getPopularMovies = async () => {
+  const response = await tmdb.get("/movie/popular");
+  return response.data.results;
+};*/
+
 export const searchSeries = async (query: string) => {
   const response = await tmdb.get("/search/tv", {
     params: { query },
